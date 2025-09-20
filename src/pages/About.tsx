@@ -1,5 +1,6 @@
 import React from 'react';
 import { Calendar, MapPin, Users, BookOpen, Award, Target } from 'lucide-react';
+import AboutImage from '../assets/students.jpeg';
 
 const About = () => {
   const milestones = [
@@ -10,28 +11,6 @@ const About = () => {
     { year: '2010', event: 'Infrastructure improvements and boundary wall construction' },
     { year: '2020', event: 'Digital learning initiatives introduced' },
   ];
-  // const milestones = [
-  //   {
-  //     year: '1987',
-  //     title: 'School Established',
-  //     description: 'POORNIMA V. SAMSTHE ARAKERE was founded with a vision to provide quality education to rural communities.'
-  //   },
-  //   {
-  //     year: '1995',
-  //     title: 'Infrastructure Expansion',
-  //     description: 'Added more classrooms and facilities to accommodate growing student population.'
-  //   },
-  //   {
-  //     year: '2005',
-  //     title: 'Computer Education',
-  //     description: 'Introduced computer education with 5 functional computers to prepare students for digital age.'
-  //   },
-  //   {
-  //     year: '2015',
-  //     title: 'Library Enhancement',
-  //     description: 'Expanded library collection to over 600 books covering diverse subjects and interests.'
-  //   }
-  // ];
 
   return (
     <div className="py-16">
@@ -49,7 +28,7 @@ const About = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-20">
           <div>
             <img
-              src="public/assets/students.jpeg"
+              src={AboutImage}
               alt="Students studying"
               className="w-full h-80 object-cover rounded-lg shadow-lg"
             />

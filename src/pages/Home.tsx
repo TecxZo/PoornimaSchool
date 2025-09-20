@@ -1,107 +1,114 @@
 import { useState, useEffect } from "react";
-import { Link } from 'react-router-dom';
-import { Users, BookOpen, Building, Award, ArrowRight, Bell, } from 'lucide-react';
+import { Link } from "react-router-dom";
+import { Users, BookOpen, Building, Award, ArrowRight, Bell } from "lucide-react";
+
+// Hero Images
+import hero1 from "../assets/hero1.jpg";
+import hero2 from "../assets/hero2.jpeg";
+import hero3 from "../assets/hero4.jpeg";
+
+// Principal Photo
+import principal from "../assets/principalPhoto.jpeg";
+
+// Announcement Images
+import announcement1 from "../assets/sports.jpeg";
+import announcement2 from "../assets/science.jpeg";
+import announcement3 from "../assets/yoga.jpeg";
 
 interface Announcement {
-    id: number;
-    title: string;
-    content: string;
-    priority: 'high' | 'medium' | 'low';
-    created_at: string;
-    image?: string; 
-    link?: string; 
-  }
+  id: number;
+  title: string;
+  content: string;
+  priority: "high" | "medium" | "low";
+  created_at: string;
+  image?: string;
+  link?: string;
+}
 
-  const announcements: Announcement[] = [
-    {
-      id: 1,
-      title: 'Taluk level sports meet',
-      content: 'On behalf of the organization, congratulations to our school children who participated in the taluk level sports meet and got second place in the throw ball match.',
-      priority: 'high',
-      created_at: '2025-09-10',
-      image: 'public/assets/sports.jpeg',
-      link: 'https://www.facebook.com/share/p/1A3wQkteSx/'
-    },
-    {
-      id: 2,
-      title: 'Science Exhibition',
-      content: 'Our students present innovative science projects at the school exhibition. A great opportunity to see young minds at work!',
-      priority: 'medium',
-      created_at: '2025-09-02',
-      image: 'public/assets/science.jpeg',
-      link: 'https://www.facebook.com/share/p/16BB86m6eY/'
-    },
-    {
-      id: 3,
-      title: 'World Yoga Day',
-      content: 'World Yoga Day was celebrated on 24-06-2025 at Purnima English School Arakere. Children teachers all participated. 💐🌾',
-      priority: 'low',
-      created_at: '2025-06-24',
-      image: 'public/assets/yoga.jpeg',
-      link: 'https://www.facebook.com/share/p/17RZzxce1v/'
-    },
-  ];
+// Announcements
+const announcements: Announcement[] = [
+  {
+    id: 1,
+    title: "Taluk level sports meet",
+    content:
+      "Congratulations to our school children who participated in the taluk level sports meet and got second place in the throw ball match.",
+    priority: "high",
+    created_at: "2025-09-10",
+    image: announcement1,
+    link: "https://www.facebook.com/share/p/1A3wQkteSx/",
+  },
+  {
+    id: 2,
+    title: "Science Exhibition",
+    content:
+      "Our students present innovative science projects at the school exhibition. A great opportunity to see young minds at work!",
+    priority: "medium",
+    created_at: "2025-09-02",
+    image: announcement2,
+    link: "https://www.facebook.com/share/p/16BB86m6eY/",
+  },
+  {
+    id: 3,
+    title: "World Yoga Day",
+    content:
+      "World Yoga Day was celebrated on 24-06-2025 at Poornima English School Arakere. Children and teachers all participated.",
+    priority: "low",
+    created_at: "2025-06-24",
+    image: announcement3,
+    link: "https://www.facebook.com/share/p/17RZzxce1v/",
+  },
+];
 
 const Home = () => {
   const stats = [
-    { icon: Users, label: 'Students', value: '500+', color: 'text-blue-600' },
-    { icon: BookOpen, label: 'Years of Excellence', value: '37+', color: 'text-green-600' },
-    { icon: Building, label: 'Classrooms', value: '15', color: 'text-purple-600' },
-    { icon: Award, label: 'Grades Offered', value: '1-10', color: 'text-orange-600' },
+    { icon: Users, label: "Students", value: "500+", color: "text-blue-600" },
+    { icon: BookOpen, label: "Years of Excellence", value: "37+", color: "text-green-600" },
+    { icon: Building, label: "Classrooms", value: "15", color: "text-purple-600" },
+    { icon: Award, label: "Grades Offered", value: "1-10", color: "text-orange-600" },
   ];
 
   const highlights = [
     {
-      title: 'Quality Education',
-      description: 'Providing comprehensive education from grades 1 to 10 with experienced faculty.',
+      title: "Quality Education",
+      description: "Comprehensive education from grades 1 to 10 with experienced faculty.",
       icon: BookOpen,
     },
     {
-      title: 'Modern Infrastructure',
-      description: '15 well-equipped classrooms and modern facilities for effective learning.',
+      title: "Modern Infrastructure",
+      description: "15 well-equipped classrooms and modern facilities for effective learning.",
       icon: Building,
     },
     {
-      title: 'Co-Educational Environment',
-      description: 'Fostering inclusive learning with equal opportunities for all students.',
+      title: "Co-Educational Environment",
+      description: "Fostering inclusive learning with equal opportunities for all students.",
       icon: Users,
     },
   ];
 
-  const images = [
-      "/assets/hero1.jpg",
-      "public/assets/hero2.jpeg",
-      "public/assets/hero4.jpeg",
-    ];
+  const images = [hero1, hero2, hero3];
+  const [currentImage, setCurrentImage] = useState(0);
 
-    const [currentImage, setCurrentImage] = useState(0);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImage((prev) => (prev + 1) % images.length);
+    }, 5000);
 
-    useEffect(() => {
-      const interval = setInterval(() => {
-        setCurrentImage((prev) => (prev + 1) % images.length);
-      }, 5000); 
+    return () => clearInterval(interval);
+  }, []);
 
-      return () => clearInterval(interval);
-    }, []);
-
-    const latestAnnouncements = announcements
+  const latestAnnouncements = announcements
     .sort((a, b) => new Date(b.created_at).getTime() - new Date(a.created_at).getTime())
     .slice(0, 3);
 
   return (
     <div>
       {/* Hero Section */}
-       <section
-      className="relative text-white bg-cover bg-center transition-all duration-1000"
-      style={{
-        backgroundImage: `url(${images[currentImage]})`,
-      }}
-    >
-      {/* Overlay */}
-      <div className="absolute inset-0 bg-black opacity-30"></div>
-
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
-        <div className="text-center">
+      <section
+        className="relative text-white bg-cover bg-center transition-all duration-1000"
+        style={{ backgroundImage: `url(${images[currentImage]})` }}
+      >
+        <div className="absolute inset-0 bg-black opacity-30"></div>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 text-center">
           <h1 className="text-4xl md:text-6xl font-bold mb-6">
             Poornima V. Samsthe Arakere
           </h1>
@@ -128,41 +135,28 @@ const Home = () => {
             </Link>
           </div>
         </div>
-      </div>
-    </section>
-
+      </section>
 
       {/* Principal Message */}
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4 flex flex-col md:flex-row items-center md:items-start gap-8">
-          
-          {/* Left Side: Principal Photo */}
           <div className="md:w-1/3 flex justify-center md:justify-start">
             <img
-              src="public/assets/principalPhoto.jpeg" 
+              src={principal}
               alt="Principal"
               className="rounded-lg shadow-lg w-64 h-64 object-cover"
             />
           </div>
-
           {/* Right Side: Message */}
-          <div className="md:w-2/3">
-            <h2 className="text-3xl font-semibold mb-4">Message from the Principal</h2>
-            <p className="text-gray-700 mb-4">
-              Welcome to <strong>POORNIMA V. SAMSTHE ARAKERE</strong>! Since our establishment in 1987, we have been committed to providing quality education in a nurturing and inclusive environment. Our school, located in the rural heart of SRIRANGAPATNA, Karnataka, aims to develop well-rounded students who are academically proficient, socially responsible, and morally grounded.
-            </p>
-            <p className="text-gray-700 mb-4">
-              We believe that every child has unique potential, and our dedicated team of teachers works tirelessly to foster curiosity, creativity, and critical thinking in our students. With a strong focus on academics, co-curricular activities, and the overall well-being of our students, we strive to create a safe and inspiring space for learning.
-            </p>
-            <p className="text-gray-700 font-medium">
-              I invite parents, students, and the community to join us in this journey of knowledge, growth, and excellence. Together, we can nurture future leaders who will make a positive difference in society.
-            </p>
-            <p className="mt-4 text-gray-900 font-semibold">– Principal, POORNIMA V. SAMSTHE ARAKERE</p>
+           <div className="md:w-2/3"> 
+           <h2 className="text-3xl font-semibold mb-4">Message from the Principal</h2> 
+           <p className="text-gray-700 mb-4"> Welcome to <strong>POORNIMA V. SAMSTHE ARAKERE</strong>! Since our establishment in 1987, we have been committed to providing quality education in a nurturing and inclusive environment. Our school, located in the rural heart of SRIRANGAPATNA, Karnataka, aims to develop well-rounded students who are academically proficient, socially responsible, and morally grounded. </p> 
+           <p className="text-gray-700 mb-4"> We believe that every child has unique potential, and our dedicated team of teachers works tirelessly to foster curiosity, creativity, and critical thinking in our students. With a strong focus on academics, co-curricular activities, and the overall well-being of our students, we strive to create a safe and inspiring space for learning. </p> 
+           <p className="text-gray-700 font-medium"> I invite parents, students, and the community to join us in this journey of knowledge, growth, and excellence. Together, we can nurture future leaders who will make a positive difference in society. </p>
+            <p className="mt-4 text-gray-900 font-semibold">– Principal, POORNIMA V. SAMSTHE ARAKERE</p> 
           </div>
-
         </div>
       </section>
-
 
       {/* Announcements Section */}
       <section className="py-16 bg-gray-50">
@@ -188,14 +182,10 @@ const Home = () => {
                       className="w-full h-96 object-cover group-hover:scale-105 transition-transform duration-300"
                     />
                   )}
-
-                  {/* Overlay */}
                   <div className="absolute inset-0 bg-black bg-opacity-40 flex flex-col justify-end p-6">
-                    <div className="mb-2">
-                      <span className="text-sm text-gray-300">
-                        {new Date(announcement.created_at).toLocaleDateString()}
-                      </span>
-                    </div>
+                    <span className="text-sm text-gray-300 mb-2">
+                      {new Date(announcement.created_at).toLocaleDateString()}
+                    </span>
                     <h3 className="text-2xl font-bold text-white mb-2">{announcement.title}</h3>
                     <p className="text-gray-200 mb-4 line-clamp-3">{announcement.content}</p>
                     {announcement.link && (
@@ -220,8 +210,6 @@ const Home = () => {
           )}
         </div>
       </section>
-
-
 
       {/* Highlights Section */}
       <section className="py-20">
@@ -286,3 +274,4 @@ const Home = () => {
 };
 
 export default Home;
+

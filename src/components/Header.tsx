@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, GraduationCap } from 'lucide-react';
+import Logo from '../assets/Poornima Vidya Samsthe Emblem.png';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -24,7 +25,7 @@ const Header = () => {
           {/* Logo and School Name */}
           <Link to="/" className="flex items-center space-x-3 group">
              <img 
-              src="public/assets/Poornima Vidya Samsthe Emblem.png" 
+              src={Logo} 
               alt="School Logo" 
               className="h-12 w-12 object-contain mx-auto"
             />
