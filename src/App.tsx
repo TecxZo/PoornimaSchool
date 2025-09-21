@@ -1,5 +1,5 @@
 import React from 'react';
-import { HashRouter as Router, Routes, Route, Outlet } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Outlet } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Home from './pages/Home';
@@ -10,7 +10,6 @@ import Contact from './pages/Contact';
 import AlumniYear from './pages/AlumniYear';
 import NotFound from './pages/NotFound';
 import ScrollToTop from './components/ScrollToTop';
-
 
 const Layout: React.FC = () => (
   <div className="min-h-screen flex flex-col">
@@ -27,6 +26,7 @@ function App() {
   return (
     <Router>
       <Routes>
+        {/* Main layout */}
         <Route element={<Layout />}>
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />
@@ -36,6 +36,8 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/alumni" element={<AlumniYear />} />
         </Route>
+
+        {/* Catch-all 404 page */}
         <Route path="*" element={<NotFound />} />
       </Routes>
     </Router>
