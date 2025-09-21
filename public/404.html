@@ -1,7 +1,14 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta http-equiv="refresh" content="0; URL=/" />
+    <meta charset="utf-8">
+    <title>Redirecting...</title>
+    <script type="text/javascript">
+      var newUrl = "/index.html?redirect=" + encodeURIComponent(
+        window.location.pathname + window.location.search + window.location.hash
+      );
+      window.location.replace(newUrl);
+    </script>
   </head>
   <body>
     <p>Redirecting...</p>
