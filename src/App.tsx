@@ -9,13 +9,15 @@ import Academics from './pages/Academics';
 import Contact from './pages/Contact';
 import AlumniYear from './pages/AlumniYear';
 import NotFound from './pages/NotFound';
+import ScrollToTop from './components/ScrollToTop';
 
-// Layout wrapper with header/footer
+
 const Layout: React.FC = () => (
   <div className="min-h-screen flex flex-col">
     <Header />
     <main className="flex-1">
-      <Outlet /> 
+      <ScrollToTop /> 
+      <Outlet />
     </main>
     <Footer />
   </div>

@@ -6,11 +6,7 @@ import { Users, BookOpen, Building, Award, ArrowRight, Bell } from "lucide-react
 import hero1 from "../assets/hero1.jpg";
 import hero2 from "../assets/hero2.jpeg";
 import hero3 from "../assets/hero4.jpeg";
-
-// Principal Photo
 import principal from "../assets/principalPhoto.jpeg";
-
-// Announcement Images
 import announcement1 from "../assets/sports.jpeg";
 import announcement2 from "../assets/science.jpeg";
 import announcement3 from "../assets/yoga.jpeg";
@@ -87,6 +83,13 @@ const Home = () => {
 
   const images = [hero1, hero2, hero3];
   const [currentImage, setCurrentImage] = useState(0);
+
+   useEffect(() => {
+      images.forEach((src) => {
+        const img = new Image();
+        img.src = src;
+      });
+    }, []);
 
   useEffect(() => {
     const interval = setInterval(() => {

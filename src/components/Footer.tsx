@@ -74,7 +74,7 @@ const Footer = () => {
               © {new Date().getFullYear()}  POORNIMA V. SAMSTHE ARAKERE. All rights reserved.
             </p>
             <p className="text-gray-400 text-sm mt-2 md:mt-0">
-              Established 1987 | Excellence in Education
+              Website Managed By TecxZo
             </p>
           </div>
         </div>
