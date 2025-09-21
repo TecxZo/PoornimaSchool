@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X} from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import Logo from '../assets/Poornima Vidya Samsthe Emblem.png';
 
 const Header = () => {
@@ -12,21 +12,22 @@ const Header = () => {
     { path: '/about', label: 'About' },
     { path: '/facilities', label: 'Facilities' },
     { path: '/academics', label: 'Academics' },
-    { path: '/Alumni', label : 'Alumni'},
+    { path: '/alumni', label: 'Alumni' },
     { path: '/contact', label: 'Contact' },
   ];
 
-  const isActive = (path: string) => location.pathname === path || (path === '/home' && location.pathname === '/');
+  const isActive = (path: string) =>
+    location.pathname === path || (path === '/home' && location.pathname === '/');
 
   return (
     <header className="bg-white shadow-md sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
-          {/* Logo and School Name */}
+          {/* Logo */}
           <Link to="/" className="flex items-center space-x-3 group">
-             <img 
-              src={Logo} 
-              alt="School Logo" 
+            <img
+              src={Logo}
+              alt="School Logo"
               className="h-12 w-12 object-contain mx-auto"
             />
             <div>
