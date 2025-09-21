@@ -15,7 +15,7 @@ const Layout: React.FC = () => (
   <div className="min-h-screen flex flex-col">
     <Header />
     <main className="flex-1">
-      <ScrollToTop /> 
+      <ScrollToTop />
       <Outlet />
     </main>
     <Footer />
@@ -26,7 +26,6 @@ function App() {
   return (
     <Router>
       <Routes>
-        {/* Main layout */}
         <Route element={<Layout />}>
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />
@@ -35,10 +34,8 @@ function App() {
           <Route path="/academics" element={<Academics />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/alumni" element={<AlumniYear />} />
+          <Route path="*" element={<NotFound />} />
         </Route>
-
-        {/* Catch-all 404 page */}
-        <Route path="*" element={<NotFound />} />
       </Routes>
     </Router>
   );
