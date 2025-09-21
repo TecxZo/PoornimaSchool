@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, GraduationCap } from 'lucide-react';
+import { Menu, X} from 'lucide-react';
 import Logo from '../assets/Poornima Vidya Samsthe Emblem.png';
 
 const Header = () => {

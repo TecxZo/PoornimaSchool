@@ -1,5 +1,6 @@
 import React from 'react';
 import { MapPin, Phone, Mail, Facebook, Twitter, Instagram, GraduationCap } from 'lucide-react';
+import Logo from '../assets/Poornima Vidya Samsthe Emblem.png';
 
 const Footer = () => {
   return (
@@ -9,8 +10,12 @@ const Footer = () => {
           {/* School Information */}
           <div className="lg:col-span-2">
             <div className="flex items-center space-x-3 mb-4">
-              <div className="bg-blue-600 p-2 rounded-lg">
-                <GraduationCap className="h-6 w-6 text-white" />
+              <div className="p-2 rounded-lg">
+                <img 
+                  src={Logo} 
+                  alt="School Logo" 
+                  className="h-12 w-12 object-contain mx-auto"
+                />
               </div>
               <h3 className="text-xl font-bold">POORNIMA V. SAMSTHE ARAKERE</h3>
             </div>
