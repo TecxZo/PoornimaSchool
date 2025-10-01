@@ -32,9 +32,9 @@ const Header = () => {
             />
             <div>
               <h1 className="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
-                POORNIMA V. SAMSTHE ARAKERE
+                POORNIMA VIDYA SAMSTHE ARAKERE
               </h1>
-              <p className="text-sm text-gray-600">Excellence in Education Since 1987</p>
+              <p className="text-sm text-gray-600">Excellence in Education Since 1985</p>
             </div>
           </Link>
 

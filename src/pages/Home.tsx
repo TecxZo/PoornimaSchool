@@ -57,21 +57,21 @@ const announcements: Announcement[] = [
 
 const Home = () => {
   const stats = [
-    { icon: Users, label: "Students", value: "500+", color: "text-blue-600" },
-    { icon: BookOpen, label: "Years of Excellence", value: "37+", color: "text-green-600" },
-    { icon: Building, label: "Classrooms", value: "15", color: "text-purple-600" },
-    { icon: Award, label: "Grades Offered", value: "1-10", color: "text-orange-600" },
+    { icon: Users, label: "Students", value: "400+", color: "text-blue-600" },
+    { icon: BookOpen, label: "Years of Excellence", value: "40+", color: "text-green-600" },
+    { icon: Building, label: "Classrooms", value: "21", color: "text-purple-600" },
+    { icon: Award, label: "Grades Offered", value: "M1-M3 & 1-10", color: "text-orange-600" },
   ];
 
   const highlights = [
     {
       title: "Quality Education",
-      description: "Comprehensive education from grades 1 to 10 with experienced faculty.",
+      description: "Comprehensive education from Montessori through Grade 10 with experienced faculty.",
       icon: BookOpen,
     },
     {
       title: "Modern Infrastructure",
-      description: "15 well-equipped classrooms and modern facilities for effective learning.",
+      description: "21 well-equipped classrooms and modern facilities for effective learning.",
       icon: Building,
     },
     {
@@ -113,14 +113,14 @@ const Home = () => {
         <div className="absolute inset-0 bg-black opacity-30"></div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 text-center">
           <h1 className="text-4xl md:text-6xl font-bold mb-6">
-            Poornima V. Samsthe Arakere
+            Poornima Vidya Samsthe Arakere
           </h1>
           <p className="text-xl md:text-2xl mb-4 text-blue-100">
-            Excellence in Kannada and English Medium Education Since 1987
+            Excellence English Medium Education Since 1985
           </p>
           <p className="text-lg mb-8 text-blue-200 max-w-3xl mx-auto">
             Located in the serene village of Arakere, Srirangapatna, we provide quality education 
-            from pre-primary to Grade 10 in a nurturing rural environment.
+            from Montessori to Grade 10 in a nurturing rural environment.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
@@ -153,10 +153,10 @@ const Home = () => {
           {/* Right Side: Message */}
            <div className="md:w-2/3"> 
            <h2 className="text-3xl font-semibold mb-4">Message from the Principal</h2> 
-           <p className="text-gray-700 mb-4"> Welcome to <strong>POORNIMA V. SAMSTHE ARAKERE</strong>! Since our establishment in 1987, we have been committed to providing quality education in a nurturing and inclusive environment. Our school, located in the rural heart of SRIRANGAPATNA, Karnataka, aims to develop well-rounded students who are academically proficient, socially responsible, and morally grounded. </p> 
+           <p className="text-gray-700 mb-4"> Welcome to <strong>POORNIMA VIDYA SAMSTHE ARAKERE</strong>! Since our establishment in 1985, we have been committed to providing quality education in a nurturing and inclusive environment. Our school, located in the rural heart of SRIRANGAPATNA, Karnataka, aims to develop well-rounded students who are academically proficient, socially responsible, and morally grounded. </p> 
            <p className="text-gray-700 mb-4"> We believe that every child has unique potential, and our dedicated team of teachers works tirelessly to foster curiosity, creativity, and critical thinking in our students. With a strong focus on academics, co-curricular activities, and the overall well-being of our students, we strive to create a safe and inspiring space for learning. </p> 
            <p className="text-gray-700 font-medium"> I invite parents, students, and the community to join us in this journey of knowledge, growth, and excellence. Together, we can nurture future leaders who will make a positive difference in society. </p>
-            <p className="mt-4 text-gray-900 font-semibold">– Principal, POORNIMA V. SAMSTHE ARAKERE</p> 
+            <p className="mt-4 text-gray-900 font-semibold">– Principal, POORNIMA VIDYA SAMSTHE ARAKERE</p> 
           </div>
         </div>
       </section>
@@ -220,7 +220,7 @@ const Home = () => {
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Why Choose Our School?</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Discover what makes POORNIMA V. SAMSTHE ARAKERE a unique place for learning and growth.
+              Discover what makes POORNIMA VIDYA SAMSTHE ARAKERE a unique place for learning and growth.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -261,7 +261,7 @@ const Home = () => {
             Ready to Join Our School Community?
           </h2>
           <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-            Discover opportunities for your child's growth and success at POORNIMA V. SAMSTHE ARAKERE.
+            Discover opportunities for your child's growth and success at POORNIMA VIDYA SAMSTHE ARAKERE.
           </p>
           <Link
             to="/contact"

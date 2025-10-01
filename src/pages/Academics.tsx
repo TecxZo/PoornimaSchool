@@ -4,7 +4,7 @@ import { BookOpen, Users, Calendar, Award, Target, Clock, Languages, GraduationC
 const Academics = () => {
   const gradeStructure = [
     {
-      category: 'Pre-Primary',
+      category: 'Montessori',
       grades: 'Nursery - UKG',
       description: 'Foundation years focusing on basic skills, creativity, and social development',
       subjects: ['Basic Literacy', 'Numeracy', 'Art & Craft', 'Physical Activities', 'Moral Values'],
@@ -14,21 +14,21 @@ const Academics = () => {
       category: 'Primary',
       grades: '1st - 5th Standard',
       description: 'Building fundamental academic skills and knowledge across core subjects',
-      subjects: ['Kannada', 'English', 'Mathematics', 'Science', 'Social Studies', 'Environmental Studies'],
+      subjects: ['Kannada', 'English', 'Mathematics', 'Science', 'Social Studies', 'Environmental Studies','Drawing','Hindi'],
       color: 'bg-blue-100 border-blue-200 text-blue-800'
     },
     {
       category: 'Middle School',
       grades: '6th - 8th Standard',
       description: 'Expanding knowledge base with specialized subjects and critical thinking skills',
-      subjects: ['Kannada', 'English', 'Mathematics', 'Science', 'Social Studies', 'Hindi','Computer Studies'],
+      subjects: ['Kannada', 'English', 'Mathematics', 'Science', 'Social Studies', 'Hindi','Computer Studies','Drawing','Physical Education'],
       color: 'bg-green-100 border-green-200 text-green-800'
     },
     {
       category: 'Secondary',
       grades: '9th - 10th Standard',
       description: 'Advanced learning preparing students for higher education and career paths',
-      subjects: ['Kannada', 'English', 'Mathematics', 'Science', 'Social Studies', 'Hindi','Computer Education'],
+      subjects: ['Kannada', 'English', 'Mathematics', 'Science', 'Social Studies', 'Hindi','Computer Education','Drawing','Physical Education'],
       color: 'bg-purple-100 border-purple-200 text-purple-800'
     }
   ];

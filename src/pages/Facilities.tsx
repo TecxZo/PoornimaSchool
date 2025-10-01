@@ -1,7 +1,7 @@
 import React from 'react';
 import { 
   BookOpen, Computer, Activity, Utensils, Bus, Shield, Heart, Users,
-  Building, Droplets, Zap, Car
+  Building, Droplets, Zap, Car, FlaskConical
 } from 'lucide-react';
 
 // Import all images from src/assets
@@ -13,10 +13,18 @@ const SchoolDetailsPage: React.FC = () => {
     {
       icon: Computer,
       title: 'Computer Education',
-      description: 'Modern computer education facility with 5 functional computers to introduce students to digital literacy and technology skills.',
-      features: ['5 Functional Computers', 'Basic Computer Skills', 'Digital Literacy', 'Technology Exposure'],
+      description: 'Modern computer education facility with 15 functional computers to introduce students to digital literacy and technology skills.',
+      features: ['10 Functional Computers', 'Basic Computer Skills', 'Digital Literacy', 'Technology Exposure'],
       available: true,
       color: 'bg-green-100 text-green-600'
+    },
+    {
+      icon: FlaskConical,
+      title: 'Science and Mathematics Lab',
+      description: 'Well-equipped science and mathematics laboratory designed to encourage hands-on learning, experimentation, and practical understanding of key concepts.',
+      features: ['Laboratory Equipment', 'Mathematics Kits', 'Hands-on Experiments', 'STEM Learning'],
+      available: true,
+      color: 'bg-blue-100 text-blue-600'
     },
     {
       icon: Activity,
@@ -26,7 +34,16 @@ const SchoolDetailsPage: React.FC = () => {
       available: true,
       color: 'bg-purple-100 text-purple-600'
     },
+    {
+      icon: BookOpen,
+      title: 'Library',
+      description: 'A well-stocked library that provides students with access to a wide collection of books, reference materials, and resources to promote reading habits and knowledge enhancement.',
+      features: ['Wide Range of Books', 'Reference Materials', 'Reading Space', 'Knowledge Resources'],
+      available: true,
+      color: 'bg-yellow-100 text-yellow-600'
+    }
   ];
+
 
   const supportServices = [
     { icon: Shield, title: 'Safe Environment', description: 'Partial boundary wall and security measures ensure a safe learning environment.', color: 'text-blue-600' },
@@ -37,7 +54,7 @@ const SchoolDetailsPage: React.FC = () => {
 
   const infrastructureFeatures = [
     { icon: Building, title: 'Private School Building', description: 'Well-maintained private building housing all educational facilities', status: 'Excellent Condition', color: 'bg-blue-100 text-blue-600' },
-    { icon: Users, title: '15 Classrooms', description: 'Spacious classrooms designed for optimal learning environment', status: 'Good Condition', color: 'bg-green-100 text-green-600' },
+    { icon: Users, title: '21 Classrooms', description: 'Spacious classrooms designed for optimal learning environment', status: 'Good Condition', color: 'bg-green-100 text-green-600' },
     { icon: BookOpen, title: 'Additional Rooms', description: '2 specialized rooms for non-teaching activities and events', status: 'Functional', color: 'bg-purple-100 text-purple-600' },
     { icon: Shield, title: 'Headmaster Office', description: 'Separate administrative room for school management', status: 'Well-Equipped', color: 'bg-orange-100 text-orange-600' }
   ];
@@ -50,7 +67,7 @@ const SchoolDetailsPage: React.FC = () => {
   ];
 
   const specialFacilities = [
-    { title: 'Computer Lab', description: '5 functional computers for digital education', image: computerLab },
+    { title: 'Computer Lab', description: '15 functional computers for digital education', image: computerLab },
     { title: 'Library', description: 'Well-stocked library with 602 books across various subjects', image: 'https://images.pexels.com/photos/256455/pexels-photo-256455.jpeg?auto=compress&cs=tinysrgb&w=600' },
     { title: 'Playground', description: 'Open space for physical activities and sports', image: playGround }
   ];
@@ -63,7 +80,7 @@ const SchoolDetailsPage: React.FC = () => {
         <div className="text-center mb-16">
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">School Facilities</h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Explore the comprehensive facilities and services available at POORNIMA V. SAMSTHE ARAKERE 
+            Explore the comprehensive facilities and services available at POORNIMA VIDYA SAMSTHE ARAKERE 
             designed to support student learning and development.
           </p>
         </div>

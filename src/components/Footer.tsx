@@ -1,5 +1,5 @@
 import React from 'react';
-import { MapPin, Phone, Mail, Facebook, Twitter, Instagram, GraduationCap } from 'lucide-react';
+import { MapPin, Phone, Mail, Facebook, Twitter, Instagram } from 'lucide-react';
 import Logo from '../assets/Poornima Vidya Samsthe Emblem.png';
 
 const Footer = () => {
@@ -17,21 +17,21 @@ const Footer = () => {
                   className="h-12 w-12 object-contain mx-auto"
                 />
               </div>
-              <h3 className="text-xl font-bold">POORNIMA V. SAMSTHE ARAKERE</h3>
+              <h3 className="text-xl font-bold">POORNIMA VIDYA SAMSTHE ARAKERE</h3>
             </div>
             <p className="text-gray-300 mb-4 leading-relaxed">
-              A premier educational institution established in 1987, committed to providing quality education 
+              A premier educational institution established in 1985, committed to providing quality education 
               in a nurturing environment. We focus on holistic development of our students through academic 
               excellence and character building.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-gray-400 hover:text-blue-400 transition-colors">
+              <a href="https://www.facebook.com/pesarakere?mibextid=rS40aB7S9Ucbxw6v" className="text-gray-400 hover:text-blue-400 transition-colors">
                 <Facebook className="h-5 w-5" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-blue-400 transition-colors">
+              <a href="" className="text-gray-400 hover:text-blue-400 transition-colors">
                 <Twitter className="h-5 w-5" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-blue-400 transition-colors">
+              <a href="" className="text-gray-400 hover:text-blue-400 transition-colors">
                 <Instagram className="h-5 w-5" />
               </a>
             </div>
@@ -51,11 +51,11 @@ const Footer = () => {
               </div>
               <div className="flex items-center space-x-3">
                 <Phone className="h-5 w-5 text-gray-400" />
-                <p className="text-gray-300">+91 XXXX-XXXXXX</p>
+                <p className="text-gray-300">+91 9449383000</p>
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="h-5 w-5 text-gray-400" />
-                <p className="text-gray-300">info@poornima-school.edu.in</p>
+                <p className="text-gray-300">pesarakere@gmail.com</p>
               </div>
             </div>
           </div>
@@ -76,11 +76,19 @@ const Footer = () => {
         <div className="border-t border-gray-800 mt-8 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-400 text-sm">
-              © {new Date().getFullYear()}  POORNIMA V. SAMSTHE ARAKERE. All rights reserved.
+              © {new Date().getFullYear()}  POORNIMA VIDYA SAMSTHE ARAKERE. All rights reserved.
             </p>
             <p className="text-gray-400 text-sm mt-2 md:mt-0">
-              Website Managed By TecxZo
-            </p>
+                Website Managed By{' '}
+                <a
+                  href="https://tecxzo.info"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-500 hover:underline"
+                >
+                  TecxZo
+                </a>
+              </p>
           </div>
         </div>
       </div>

@@ -20,9 +20,7 @@ const Contact = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Here you would typically send the form data to a server
     setIsSubmitted(true);
-    // Reset form after 3 seconds
     setTimeout(() => {
       setIsSubmitted(false);
       setFormData({
@@ -40,7 +38,7 @@ const Contact = () => {
       icon: MapPin,
       title: 'Address',
       details: [
-        'POORNIMA V. SAMSTHE ARAKERE',
+        'POORNIMA VIDYA SAMSTHE ARAKERE',
         'ARAKERE Village',
         'SRIRANGAPATNA Block',
         'MANDYA District, Karnataka, India'
@@ -51,8 +49,8 @@ const Contact = () => {
       icon: Phone,
       title: 'Phone',
       details: [
-        '+91 XXXX-XXXXXX',
-        'Office Hours: 9:00 AM - 4:00 PM',
+        '+91 9449383000',
+        'Office Hours: 9:00 AM - 4:30 PM',
         'Monday to Saturday'
       ],
       color: 'text-green-600'
@@ -61,8 +59,7 @@ const Contact = () => {
       icon: Mail,
       title: 'Email',
       details: [
-        'info@poornima-school.edu.in',
-        'principal@poornima-school.edu.in',
+        'pesarakere@gmail.com',
         'Response within 24 hours'
       ],
       color: 'text-purple-600'
@@ -85,7 +82,7 @@ const Contact = () => {
         <div className="text-center mb-16">
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Contact Us</h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Get in touch with POORNIMA V. SAMSTHE ARAKERE for inquiries about admissions, 
+            Get in touch with POORNIMA VIDYA SAMSTHE ARAKERE for inquiries about admissions, 
             academic programs, or any other information you need.
           </p>
         </div>
@@ -223,7 +220,7 @@ const Contact = () => {
                 <div className="text-center text-gray-500">
                   <MapPin className="h-16 w-16 mx-auto mb-4" />
                   <p className="text-lg font-medium">School Location Map</p>
-                  <p className="text-sm">ARAKERE Village, SRIRANGAPATNA Block</p>
+                  <p className="text-sm">College Circle ARAKERE Village, SRIRANGAPATNA Block</p>
                   <p className="text-sm">MANDYA District, Karnataka</p>
                 </div>
               </div>
@@ -243,7 +240,7 @@ const Contact = () => {
                   <Clock className="h-6 w-6 text-green-600" />
                   <div>
                     <p className="font-semibold text-gray-900">Monday - Friday</p>
-                    <p className="text-gray-600">9:00 AM - 4:00 PM</p>
+                    <p className="text-gray-600">9:00 AM - 4:30 PM</p>
                   </div>
                 </div>
                 <div className="flex items-center space-x-3">

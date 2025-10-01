@@ -1,16 +1,46 @@
-import React from 'react';
 import { Calendar, MapPin, Users, BookOpen, Award, Target } from 'lucide-react';
 import AboutImage from '../assets/students.jpeg';
+import milestone1 from '../assets/hero1.jpg';
+import milestone2 from '../assets/principalPhoto.jpeg';
+import milestone3 from '../assets/yoga.jpeg';
+import milestone4 from '../assets/yoga.jpeg';
+import milestone5 from '../assets/ganesha.jpeg';
+import milestone6 from '../assets/playGround.jpeg';
 
 const About = () => {
   const milestones = [
-    { year: '1987', event: 'School established in Arakere, Srirangapatna' },
-    { year: '1990', event: 'Added pre-primary section for early education' },
-    { year: '1995', event: 'Computer lab established with basic facilities' },
-    { year: '2000', event: 'Library expanded with 600+ books collection' },
-    { year: '2010', event: 'Infrastructure improvements and boundary wall construction' },
-    { year: '2020', event: 'Digital learning initiatives introduced' },
+    { 
+      year: '1985', 
+      event: 'School established in Arakere, Srirangapatna',
+      image: milestone1
+    },
+    { 
+      year: '1990', 
+      event: 'Added pre-primary section for early education',
+      image: milestone2
+    },
+    { 
+      year: '1995', 
+      event: 'Computer lab established with basic facilities',
+      image: milestone3
+    },
+    { 
+      year: '2000', 
+      event: 'Library expanded with 600+ books collection',
+      image: milestone4
+    },
+    { 
+      year: '2010', 
+      event: 'Infrastructure improvements and boundary wall construction',
+      image: milestone5
+    },
+    { 
+      year: '2020', 
+      event: 'Digital learning initiatives introduced',
+      image: milestone6
+    },
   ];
+
 
   return (
     <div className="py-16">
@@ -36,21 +66,20 @@ const About = () => {
           <div className="flex flex-col justify-center">
             <h2 className="text-3xl font-bold text-gray-900 mb-6">Our Story</h2>
             <p className="text-gray-600 mb-6 leading-relaxed">
-              POORNIMA V. SAMSTHE ARAKERE has been a beacon of education in the rural landscape of 
-              Karnataka since 1987. As a private unaided institution, we have maintained our commitment 
+              POORNIMA VIDYA SAMSTHE ARAKERE has been a beacon of education in the rural landscape of 
+              Karnataka since 1985. As a private unaided institution, we have maintained our commitment 
               to providing quality education while staying deeply rooted in our community values.
             </p>
             <p className="text-gray-600 mb-6 leading-relaxed">
-              Located in the SRIRANGAPATNA block of MANDYA district, our school serves the educational 
-              needs of the local community, offering comprehensive education from grades 1 to 10, 
-              including a pre-primary section.
+              Located in the College Circle AREKERE Village SRIRANGAPATNA block of MANDYA district, our school serves the educational 
+              needs of the local community, offering comprehensive education from Montessori through Grade 10. 
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div className="flex items-center space-x-3">
                 <Calendar className="h-6 w-6 text-blue-600 flex-shrink-0" />
                 <div>
                   <p className="font-semibold text-gray-900">Established</p>
-                  <p className="text-gray-600">1987</p>
+                  <p className="text-gray-600">1985</p>
                 </div>
               </div>
               <div className="flex items-center space-x-3">
@@ -78,25 +107,38 @@ const About = () => {
           </div>
         </div>
 
-        <div className="mb-16">
+       <div className="mb-16">
           <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">Our Journey</h2>
           <div className="max-w-4xl mx-auto">
             <div className="relative">
               {/* Timeline line */}
               <div className="absolute left-1/2 transform -translate-x-0.5 w-1 h-full bg-gradient-to-b from-blue-600 to-emerald-600"></div>
-              
+
               {milestones.map((milestone, index) => (
-                <div key={index} className={`relative flex items-center mb-8 ${
-                  index % 2 === 0 ? 'justify-start' : 'justify-end'
-                }`}>
+                <div
+                  key={index}
+                  className={`relative flex items-center mb-10 ${
+                    index % 2 === 0 ? 'justify-start' : 'justify-end'
+                  }`}
+                >
                   {/* Timeline dot */}
                   <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-white border-4 border-blue-600 rounded-full z-10"></div>
                   
-                  {/* Content */}
-                  <div className={`w-5/12 ${index % 2 === 0 ? 'pr-8 text-right' : 'pl-8'}`}>
-                    <div className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
-                      <div className="text-2xl font-bold text-blue-600 mb-2">{milestone.year}</div>
-                      <div className="text-gray-700">{milestone.event}</div>
+                  {/* Content Card with Image Background */}
+                  <div className={`w-5/12 ${index % 2 === 0 ? 'pr-8' : 'pl-8'}`}>
+                    <div
+                      className="relative rounded-xl shadow-xl overflow-hidden transition-transform transform hover:scale-[1.02] min-h-72"
+                      style={{
+                        backgroundImage: `url(${milestone.image})`,
+                        backgroundSize: 'cover',
+                        backgroundPosition: 'center',
+                      }}
+                    >
+                      {/* Text pinned at bottom-right */}
+                      <div className="absolute bottom-4 right-4 bg-black bg-opacity-50 px-4 py-2 rounded-md">
+                        <div className="text-2xl font-bold text-white">{milestone.year}</div>
+                        <div className="text-lg text-white font-medium">{milestone.event}</div>
+                      </div>
                     </div>
                   </div>
                 </div>
