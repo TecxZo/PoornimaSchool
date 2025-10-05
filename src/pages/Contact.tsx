@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import emailjs from '@emailjs/browser';
 import { MapPin, Phone, Mail, Clock, Send, CheckCircle } from 'lucide-react';
 
 const Contact = () => {
@@ -10,6 +11,7 @@ const Contact = () => {
     message: ''
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSending, setIsSending] = useState(false);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({
@@ -20,17 +22,34 @@ const Contact = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitted(true);
-    setTimeout(() => {
-      setIsSubmitted(false);
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        subject: '',
-        message: ''
-      });
-    }, 3000);
+    setIsSending(true);
+
+    const SERVICE_ID = 'service_9r9xzaa';
+    const TEMPLATE_ID = 'template_wc0mdrd';
+    const PUBLIC_KEY = 'Fbp7VxqFRD_33gRfp';
+
+    emailjs.send(
+      SERVICE_ID,
+      TEMPLATE_ID,
+      {
+        from_name: formData.name,
+        from_email: formData.email,
+        phone: formData.phone,
+        subject: formData.subject,
+        message: formData.message,
+        date: new Date().toLocaleString()
+      },
+      PUBLIC_KEY
+    )
+    .then(() => {
+      setIsSubmitted(true);
+      setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
+    })
+    .catch((error) => {
+      alert('Failed to send message. Please try again.');
+      console.error(error);
+    })
+    .finally(() => setIsSending(false));
   };
 
   const contactInfo = [
@@ -87,7 +106,7 @@ const Contact = () => {
           </p>
         </div>
 
-        {/* Contact Information Cards */}
+        {/* Contact Info Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
           {contactInfo.map((info, index) => (
             <div key={index} className="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow border border-gray-100 text-center">
@@ -202,10 +221,13 @@ const Contact = () => {
 
                 <button
                   type="submit"
-                  className="w-full bg-blue-600 text-white py-3 px-6 rounded-lg hover:bg-blue-700 transition-colors flex items-center justify-center space-x-2 font-semibold"
+                  disabled={isSending}
+                  className={`w-full bg-blue-600 text-white py-3 px-6 rounded-lg flex items-center justify-center space-x-2 font-semibold transition-colors ${
+                    isSending ? 'opacity-50 cursor-not-allowed' : 'hover:bg-blue-700'
+                  }`}
                 >
                   <Send className="h-5 w-5" />
-                  <span>Send Message</span>
+                  <span>{isSending ? 'Sending...' : 'Send Message'}</span>
                 </button>
               </form>
             )}
