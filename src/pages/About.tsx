@@ -109,43 +109,54 @@ const About = () => {
 
        <div className="mb-16">
           <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">Our Journey</h2>
-          <div className="max-w-4xl mx-auto">
-            <div className="relative">
-              {/* Timeline line */}
-              <div className="absolute left-1/2 transform -translate-x-0.5 w-1 h-full bg-gradient-to-b from-blue-600 to-emerald-600"></div>
 
-              {milestones.map((milestone, index) => (
+          <div className="max-w-4xl mx-auto relative">
+            {/* Timeline vertical line */}
+            <div className="absolute left-1/2 top-0 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-blue-600 to-emerald-600 hidden md:block"></div>
+            <div className="absolute left-4 top-0 w-1 h-full bg-gradient-to-b from-blue-600 to-emerald-600 md:hidden"></div>
+
+            {milestones.map((milestone, index) => (
+              <div
+                key={index}
+                className={`relative flex flex-col md:flex-row items-center mb-10 ${
+                  index % 2 === 0 ? 'md:justify-start' : 'md:justify-end'
+                }`}
+              >
+                {/* Timeline dot */}
                 <div
-                  key={index}
-                  className={`relative flex items-center mb-10 ${
-                    index % 2 === 0 ? 'justify-start' : 'justify-end'
-                  }`}
+                  className={`absolute z-10 rounded-full w-4 h-4 bg-white border-4 border-blue-600 
+                  ${index % 2 === 0 ? 'md:left-1/2 md:-translate-x-1/2' : 'md:left-1/2 md:-translate-x-1/2'} 
+                  left-4 md:left-1/2`}
+                ></div>
+
+                {/* Content Card */}
+                <div
+                  className={`
+                    w-full md:w-5/12
+                    ${index % 2 === 0 ? 'md:pr-8' : 'md:pl-8'}
+                    mt-8 md:mt-0
+                  `}
                 >
-                  {/* Timeline dot */}
-                  <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-white border-4 border-blue-600 rounded-full z-10"></div>
-                  
-                  {/* Content Card with Image Background */}
-                  <div className={`w-5/12 ${index % 2 === 0 ? 'pr-8' : 'pl-8'}`}>
-                    <div
-                      className="relative rounded-xl shadow-xl overflow-hidden transition-transform transform hover:scale-[1.02] min-h-72"
-                      style={{
-                        backgroundImage: `url(${milestone.image})`,
-                        backgroundSize: 'cover',
-                        backgroundPosition: 'center',
-                      }}
-                    >
-                      {/* Text pinned at bottom-right */}
-                      <div className="absolute bottom-4 right-4 bg-black bg-opacity-50 px-4 py-2 rounded-md">
-                        <div className="text-2xl font-bold text-white">{milestone.year}</div>
-                        <div className="text-lg text-white font-medium">{milestone.event}</div>
-                      </div>
+                  <div
+                    className="relative rounded-xl shadow-xl overflow-hidden transition-transform transform hover:scale-[1.02] min-h-72"
+                    style={{
+                      backgroundImage: `url(${milestone.image})`,
+                      backgroundSize: 'cover',
+                      backgroundPosition: 'center',
+                    }}
+                  >
+                    {/* Text overlay */}
+                    <div className="absolute bottom-4 right-4 bg-black bg-opacity-50 px-4 py-2 rounded-md">
+                      <div className="text-2xl font-bold text-white">{milestone.year}</div>
+                      <div className="text-lg text-white font-medium">{milestone.event}</div>
                     </div>
                   </div>
                 </div>
-              ))}
-            </div>
+              </div>
+            ))}
           </div>
         </div>
+
 
         {/* Mission & Vision */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20">
