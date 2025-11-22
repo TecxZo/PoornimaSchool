@@ -10,6 +10,7 @@ import Contact from './pages/Contact';
 import AlumniYear from './pages/AlumniYear';
 import NotFound from './pages/NotFound';
 import ScrollToTop from './components/ScrollToTop';
+import PhotoGallery from './pages/photosSection';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path="/facilities" element={<><Header /><SchoolDetailsPage /><Footer /></>} />
         <Route path="/academics" element={<><Header /><Academics /><Footer /></>} />
         <Route path="/contact" element={<><Header /><Contact /><Footer /></>} />
+        <Route path='/PhotoGallery' element={<><Header/><PhotoGallery/><Footer/></>} />
         <Route path="/alumni" element={<><Header /><AlumniYear /><Footer /></>} />
         <Route path="*" element={<><NotFound /></>} />
       </Routes>

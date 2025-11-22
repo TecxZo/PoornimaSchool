@@ -214,7 +214,7 @@ const Academics = () => {
         </div>
 
         {/* Teachers Section */}
-        <div className="mb-20">
+        {/* <div className="mb-20">
           <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center">Our Esteemed Teachers</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
             {teachers.map((teacher, index) => (
@@ -230,7 +230,7 @@ const Academics = () => {
               </div>
             ))}
           </div>
-        </div>
+        </div> */}
 
         {/* Student Development */}
         <div className="text-center">

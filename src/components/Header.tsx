@@ -12,7 +12,8 @@ const Header = () => {
     { path: '/about', label: 'About' },
     { path: '/facilities', label: 'Facilities' },
     { path: '/academics', label: 'Academics' },
-    { path: '/alumni', label: 'Alumni' },
+    // { path: '/alumni', label: 'Alumni' },
+    { path: '/PhotoGallery', label : 'Gallery'},
     { path: '/contact', label: 'Contact' },
   ];
 
